@@ -39,4 +39,14 @@ describe('PokemonFormularioComponent', () => {
     expect(component.pokemon).toBeTruthy();
     expect(component.title).toEqual('Editar Pokemon (Prueba)');
   });
+
+  it('if not is edit should have pokemon empty', function () {
+    fixture = TestBed.createComponent(PokemonFormularioComponent);
+    component = fixture.componentInstance;
+    component.isSave = true;
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.nuevo).toEqual(true);
+    expect(component.pokemon).toBeTruthy();
+  });
 });
