@@ -37,8 +37,8 @@ export const ConfigTablePokemonListado = Object.freeze({
     return [
       {nombre: 'name', descripcion: 'Nombre',},
       {nombre: 'image', descripcion: 'Imagen',},
-      {nombre: 'image', descripcion: 'Ataque',},
-      {nombre: 'attack', descripcion: 'Defensa',},
+      {nombre: 'attack', descripcion: 'Ataque',},
+      {nombre: 'defense', descripcion: 'Defensa',},
     ]
   }
 })

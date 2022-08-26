@@ -6,5 +6,21 @@
   </tr>
   </thead>
   <tbody>
+  <tr *ngFor="let pokemon of dataSoruce$ | async;">
+    <td>{{pokemon.name}}</td>
+    <td class="text-center">
+      <img src="{{pokemon.image}}" alt="pokemon-img" width="35"/>
+    </td>
+    <td class="text-center">{{pokemon.attack}}</td>
+    <td class="text-center">{{pokemon.defense}}</td>
+    <td class="text-center" width="10%">
+      <button class="btn btn-action">
+        <i class="fa fa-pencil-square-o"></i>
+      </button>
+      <button class="btn btn-action">
+        <i class="fa fa-trash-o"></i>
+      </button>
+    </td>
+  </tr>
   </tbody>
 </table>

@@ -15,8 +15,8 @@ export class PokemonHttpService extends BaseHttpService {
   obtenerListadoPokemon() {
     const params = new HttpParams()
       .set('idAuthor', 1);
-    const url = `${this.servicio}/count`;
-    return this.http.get<IPokemonListado>(url, {params});
+    const url = `${this.servicio}`;
+    return this.http.get<IPokemonListado[]>(url, {params});
   }
 
 }
