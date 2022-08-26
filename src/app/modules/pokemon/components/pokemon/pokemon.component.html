@@ -25,6 +25,7 @@
       <app-pokemon-formulario
         [isSave]="esNuevo"
         (changePokemon)="obtenerPokemon($event)"
+        (cancelar)="cancelar()"
         [pokemon]="pokemon"></app-pokemon-formulario>
     </div>
   </div>

@@ -44,6 +44,12 @@ export class PokemonComponent implements OnInit {
     this.pokemon = pokemon;
   }
 
+  cancelar(){
+    this.visualizarFormulario = false;
+    this.esNuevo = true;
+    this.pokemon = undefined;
+  }
+
   obtenerPokemon(pokemon: Pokemon) {
     console.log(pokemon)
   }
