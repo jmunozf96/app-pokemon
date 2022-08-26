@@ -1,7 +1,19 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-
+      <div class="row">
+        <div class='col-md-12'>
+          <div class="title">
+            <p>Listado de Pokemon</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input-icon-search type='text' icon='fa fa-search icon' (onEnter)="searchData($event)" (onDebounce)="suggestions($event)"></input-icon-search>
+        </div>
+        <div class="col-md-6 d-flex" style='justify-content: end'>
+          <button class="btn"><i class="fa fa-plus"></i> Nuevo</button>
+        </div>
+      </div>
     </div>
     <div class="col-md-12">
       <app-pokemon-listado [data]="dataSoruce$"></app-pokemon-listado>

@@ -21,4 +21,12 @@ export class PokemonComponent implements OnInit {
   get dataSoruce$() {
     return this.pokemonAccion.dataSoruce$;
   }
+
+  searchData(termino: string) {
+    console.log(termino)
+  }
+
+  suggestions(termino: string) {
+    console.log(termino)
+  }
 }
