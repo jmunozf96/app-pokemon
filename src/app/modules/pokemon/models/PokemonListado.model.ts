@@ -5,8 +5,8 @@ import {TableColumns} from "../../../core/interfaces/general.interface";
 export class Pokemon implements IPokemon {
   declare id: number;
   declare uuid: string;
-  declare name: string;
-  declare image: string;
+  name: string;
+  image: string;
   declare attack: number;
   declare defense: number;
   declare hp: number;
@@ -29,6 +29,8 @@ export class Pokemon implements IPokemon {
 
   constructor() {
     this.uuid = uuiv4();
+    this.name = '';
+    this.image = '';
     this.attack = 0;
     this.defense = 0;
     this.hp = 0;
