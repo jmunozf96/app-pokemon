@@ -3,7 +3,7 @@ import {PokemonComponent} from './pokemon.component';
 import {PokemonAccionService} from "../../services/pokemon-accion.service";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {NO_ERRORS_SCHEMA} from "@angular/core";
-import {uuiv4} from "../../../../core/helpers/functions.helper";
+import {Pokemon} from "../../models/PokemonListado.model";
 
 describe('PokemonComponent', () => {
   let component: PokemonComponent;
@@ -62,5 +62,21 @@ describe('PokemonComponent', () => {
       uuid: 'uuid',
       idAuthor: 1
     }]);
+  });
+
+  it('should show form when edit Pokemon', function () {
+    fixture = TestBed.createComponent(PokemonComponent);
+    component = fixture.componentInstance;
+    component.editar(new Pokemon())
+    fixture.detectChanges();
+    expect(component.visualizarFormulario).toEqual(true);
+  });
+
+  it('should set false new item when edit Pokemon', function () {
+    fixture = TestBed.createComponent(PokemonComponent);
+    component = fixture.componentInstance;
+    component.editar(new Pokemon())
+    fixture.detectChanges();
+    expect(component.esNuevo).toEqual(false);
   });
 });
