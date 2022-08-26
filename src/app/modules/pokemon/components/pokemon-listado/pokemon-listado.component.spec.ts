@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PokemonListadoComponent } from './pokemon-listado.component';
+import {PokemonListadoComponent} from './pokemon-listado.component';
+import {ConfigTablePokemonListado} from "../../models/PokemonListado.model";
 
 describe('PokemonListadoComponent', () => {
   let component: PokemonListadoComponent;
@@ -8,9 +9,9 @@ describe('PokemonListadoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PokemonListadoComponent ]
+      declarations: [PokemonListadoComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +22,12 @@ describe('PokemonListadoComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have columns from model', function () {
+    fixture = TestBed.createComponent(PokemonListadoComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    expect(component.columnas.length === ConfigTablePokemonListado.getColumns().length).toBeTrue();
   });
 });
