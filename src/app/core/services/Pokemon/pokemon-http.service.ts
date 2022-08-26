@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {BaseHttpService} from "../Base/base-http.service";
 import {HttpParams} from "@angular/common/http";
-import {IPokemonListado} from "../../../modules/pokemon/interfaces/pokemon-listado.interface";
+import {IPokemon} from "../../../modules/pokemon/interfaces/pokemon-listado.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class PokemonHttpService extends BaseHttpService {
     const params = new HttpParams()
       .set('idAuthor', 1);
     const url = `${this.servicio}`;
-    return this.http.get<IPokemonListado[]>(url, {params});
+    return this.http.get<IPokemon[]>(url, {params});
   }
 
 }

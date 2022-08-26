@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PokemonAccionService} from "../../services/pokemon-accion.service";
+import {Pokemon} from "../../models/PokemonListado.model";
 
 @Component({
   selector: 'app-pokemon',
@@ -10,6 +11,8 @@ import {PokemonAccionService} from "../../services/pokemon-accion.service";
   ]
 })
 export class PokemonComponent implements OnInit {
+  visualizarFormulario: boolean = false;
+  esNuevo: boolean = true;
 
   constructor(private pokemonAccion: PokemonAccionService) {
   }
@@ -28,5 +31,13 @@ export class PokemonComponent implements OnInit {
 
   suggestions(termino: string) {
     console.log(termino)
+  }
+
+  nuevo() {
+    this.visualizarFormulario = true;
+  }
+
+  obtenerPokemon(pokemon: Pokemon){
+    console.log(pokemon)
   }
 }

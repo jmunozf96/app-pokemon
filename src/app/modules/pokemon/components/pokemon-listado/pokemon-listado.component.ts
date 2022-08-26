@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TableColumns} from "../../../../core/interfaces/general.interface";
-import {ConfigTablePokemonListado, PokemonListado} from "../../models/PokemonListado.model";
+import {ConfigTablePokemonListado, Pokemon} from "../../models/PokemonListado.model";
 import {BehaviorSubject} from "rxjs";
 
 @Component({
@@ -9,12 +9,12 @@ import {BehaviorSubject} from "rxjs";
   styleUrls: ['./pokemon-listado.component.scss']
 })
 export class PokemonListadoComponent implements OnInit {
-  @Input('data') dataSoruce$: BehaviorSubject<PokemonListado[]>;
+  @Input('data') dataSoruce$: BehaviorSubject<Pokemon[]>;
   columnas: TableColumns[];
 
   constructor() {
     this.columnas = ConfigTablePokemonListado.getColumns();
-    this.dataSoruce$ = new BehaviorSubject<PokemonListado[]>([]);
+    this.dataSoruce$ = new BehaviorSubject<Pokemon[]>([]);
   }
 
   ngOnInit(): void {

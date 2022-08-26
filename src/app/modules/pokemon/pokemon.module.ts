@@ -5,12 +5,15 @@ import {IndexComponent} from "./pages/index.component";
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { PokemonListadoComponent } from './components/pokemon-listado/pokemon-listado.component';
 import {ControlsModule} from "../../shared/components/controls/controls.module";
+import { PokemonFormularioComponent } from './components/pokemon-formulario/pokemon-formulario.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     IndexComponent,
     PokemonComponent,
-    PokemonListadoComponent
+    PokemonListadoComponent,
+    PokemonFormularioComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +21,8 @@ import {ControlsModule} from "../../shared/components/controls/controls.module";
       path: '',
       component: IndexComponent
     }]),
-    ControlsModule
+    ControlsModule,
+    FormsModule
   ]
 })
 export class PokemonModule {

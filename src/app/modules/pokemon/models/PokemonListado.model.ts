@@ -1,8 +1,8 @@
-import {IPokemonListado} from "../interfaces/pokemon-listado.interface";
+import {IPokemon} from "../interfaces/pokemon-listado.interface";
 import {uuiv4} from "../../../core/helpers/functions.helper";
 import {TableColumns} from "../../../core/interfaces/general.interface";
 
-export class PokemonListado implements IPokemonListado {
+export class Pokemon implements IPokemon {
   declare id: number;
   declare uuid: string;
   declare name: string;
@@ -14,7 +14,7 @@ export class PokemonListado implements IPokemonListado {
   declare id_author: number;
 
   static instanceNewObject(data: any) {
-    const pokemonListado = new PokemonListado();
+    const pokemonListado = new Pokemon();
     pokemonListado.id = data['id'] ?? pokemonListado.id;
     pokemonListado.uuid = data['uuid'] ?? pokemonListado.uuid;
     pokemonListado.name = data['name'] ?? pokemonListado.name;
@@ -29,6 +29,8 @@ export class PokemonListado implements IPokemonListado {
 
   constructor() {
     this.uuid = uuiv4();
+    this.attack = 0;
+    this.defense = 0;
   }
 }
 
