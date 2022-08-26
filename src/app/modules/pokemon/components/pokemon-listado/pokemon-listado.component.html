@@ -14,10 +14,10 @@
     <td class="text-center">{{pokemon.attack}}</td>
     <td class="text-center">{{pokemon.defense}}</td>
     <td class="text-center" width="10%">
-      <button class="btn btn-action">
+      <button class="btn btn-action" (click)="onEdit(pokemon)">
         <i class="fa fa-pencil-square-o"></i>
       </button>
-      <button class="btn btn-action">
+      <button class="btn btn-action" (click)="onDelete(pokemon)">
         <i class="fa fa-trash-o"></i>
       </button>
     </td>

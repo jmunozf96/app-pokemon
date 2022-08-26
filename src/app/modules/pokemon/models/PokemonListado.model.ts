@@ -31,6 +31,9 @@ export class Pokemon implements IPokemon {
     this.uuid = uuiv4();
     this.attack = 0;
     this.defense = 0;
+    this.hp = 0;
+    this.id_author = 1;
+    this.type = "Desconocido";
   }
 }
 

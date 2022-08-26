@@ -13,6 +13,7 @@ import {Pokemon} from "../../models/PokemonListado.model";
 export class PokemonComponent implements OnInit {
   visualizarFormulario: boolean = false;
   esNuevo: boolean = true;
+  pokemon: Pokemon | undefined;
 
   constructor(private pokemonAccion: PokemonAccionService) {
   }
@@ -37,7 +38,13 @@ export class PokemonComponent implements OnInit {
     this.visualizarFormulario = true;
   }
 
-  obtenerPokemon(pokemon: Pokemon){
+  editar(pokemon: Pokemon) {
+    this.visualizarFormulario = true;
+    this.esNuevo = false;
+    this.pokemon = pokemon;
+  }
+
+  obtenerPokemon(pokemon: Pokemon) {
     console.log(pokemon)
   }
 }
