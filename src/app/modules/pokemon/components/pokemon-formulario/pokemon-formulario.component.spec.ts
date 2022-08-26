@@ -1,7 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {PokemonFormularioComponent} from './pokemon-formulario.component';
 import {Pokemon} from "../../models/PokemonListado.model";
-import {NO_ERRORS_SCHEMA} from "@angular/core";
+import {NO_ERRORS_SCHEMA, SimpleChange} from "@angular/core";
 
 describe('PokemonFormularioComponent', () => {
   let component: PokemonFormularioComponent;
@@ -31,7 +31,12 @@ describe('PokemonFormularioComponent', () => {
     component = fixture.componentInstance;
     component.pokemon = Pokemon.instanceNewObject({name: 'Prueba'});
     component.isSave = false;
+    component.ngOnChanges({
+      name: new SimpleChange(null, component.title, true),
+    })
     fixture.detectChanges();
     expect(component.nuevo).toEqual(false);
+    expect(component.pokemon).toBeTruthy();
+    expect(component.title).toEqual('Editar Pokemon (Prueba)');
   });
 });
