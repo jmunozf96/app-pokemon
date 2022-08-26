@@ -32,6 +32,6 @@ describe('PokemonFormularioComponent', () => {
     component.pokemon = Pokemon.instanceNewObject({name: 'Prueba'});
     component.isSave = false;
     fixture.detectChanges();
-    expect(component.title).toEqual(`Editar Pokemon (Prueba)`);
+    expect(component.nuevo).toEqual(false);
   });
 });
