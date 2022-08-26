@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+  },
+  {
+    path: 'pokemon',
+    loadChildren: () => import('../modules/pokemon/pokemon.module').then(m => m.PokemonModule)
   }
 ]
 
