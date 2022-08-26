@@ -34,7 +34,7 @@ export class PokemonFormularioComponent implements OnInit, OnDestroy, OnChanges 
   ngOnInit(): void {
     if (this.nuevo) {
       this.pokemon = new Pokemon();
-    }
+    } else this.pokemon = Pokemon.instanceNewObject(this.pokemon);
   }
 
   procesarPokemon() {

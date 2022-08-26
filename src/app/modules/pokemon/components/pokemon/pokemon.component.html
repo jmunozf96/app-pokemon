@@ -17,7 +17,10 @@
       </div>
     </div>
     <div class="col-md-12">
-      <app-pokemon-listado [data]="dataSoruce$" (editarPokemon)="editar($event)"></app-pokemon-listado>
+      <app-pokemon-listado
+        [data]="dataSoruce$"
+        (editarPokemon)="editar($event)"
+        (eliminarPokemon)="eliminar($event)"></app-pokemon-listado>
     </div>
   </div>
   <div class="row" *ngIf="visualizarFormulario">

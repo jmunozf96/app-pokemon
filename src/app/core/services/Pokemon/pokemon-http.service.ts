@@ -19,4 +19,25 @@ export class PokemonHttpService extends BaseHttpService {
     return this.http.get<IPokemon[]>(url, {params});
   }
 
+  guardarPokemon(pokemon: IPokemon) {
+    const params = new HttpParams()
+      .set('idAuthor', 1);
+    const url = `${this.servicio}`;
+    return this.http.post<IPokemon>(url, pokemon, {params});
+  }
+
+  actualizarPokemon(pokemon: IPokemon) {
+    const params = new HttpParams()
+      .set('idAuthor', 1);
+    const url = `${this.servicio}/${pokemon.id}`;
+    return this.http.put<IPokemon>(url, pokemon, {params});
+  }
+
+  eliminarPokemon(id: number) {
+    const params = new HttpParams()
+      .set('idAuthor', 1);
+    const url = `${this.servicio}/${id}`;
+    return this.http.delete<void>(url, {params});
+  }
+
 }

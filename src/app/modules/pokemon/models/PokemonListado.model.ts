@@ -11,7 +11,7 @@ export class Pokemon implements IPokemon {
   declare defense: number;
   declare hp: number;
   declare type: string;
-  declare id_author: number;
+  declare idAuthor: number;
 
   static instanceNewObject(data: any) {
     const pokemonListado = new Pokemon();
@@ -23,7 +23,7 @@ export class Pokemon implements IPokemon {
     pokemonListado.defense = data['defense'] ?? pokemonListado.defense;
     pokemonListado.hp = data['hp'] ?? pokemonListado.hp;
     pokemonListado.type = data['type'] ?? pokemonListado.type;
-    pokemonListado.id_author = data['id_author'] ?? pokemonListado.id_author;
+    pokemonListado.idAuthor = data['id_author'] ?? data['idAuthor'] ?? pokemonListado.idAuthor;
     return pokemonListado;
   }
 
@@ -32,7 +32,7 @@ export class Pokemon implements IPokemon {
     this.attack = 0;
     this.defense = 0;
     this.hp = 0;
-    this.id_author = 1;
+    this.idAuthor = 1;
     this.type = "Desconocido";
   }
 }

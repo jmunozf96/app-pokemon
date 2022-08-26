@@ -18,4 +18,16 @@ export class PokemonAccionService {
         tap(next => this.dataSoruce$.next(next))
       )
   }
+
+  guardarPokemon(pokemon: Pokemon) {
+    return this.pokemonHttp.guardarPokemon(pokemon)
+  };
+
+  actualizarPokemon(pokemon: Pokemon) {
+    return this.pokemonHttp.actualizarPokemon(pokemon);
+  }
+
+  eliminarPokemon(pokemon: Pokemon) {
+    return this.pokemonHttp.eliminarPokemon(pokemon.id);
+  }
 }
