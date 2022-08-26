@@ -2,10 +2,12 @@ import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {IndexComponent} from "./pages/index.component";
+import { PokemonComponent } from './components/pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
-    IndexComponent
+    IndexComponent,
+    PokemonComponent
   ],
   imports: [
     CommonModule,

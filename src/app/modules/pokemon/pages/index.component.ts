@@ -1,9 +1,7 @@
 import {Component} from "@angular/core";
 
 @Component({
-  template: `
-
-  `
+  template: `<app-pokemon></app-pokemon>`
 })
 export class IndexComponent {
 
